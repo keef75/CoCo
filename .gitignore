@@ -1,0 +1,175 @@
+# ============================================================================
+# CoCo - Sensitive Data & Build Artifacts
+# ============================================================================
+
+# CRITICAL: API Keys, Credentials, Tokens
+.env
+.env-e
+.env-*
+!.env.example
+token.json
+credentials.json
+client_secret_*.json
+new_tokens.txt
+
+# Database files (contain personal data)
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Command/conversation history
+.coco_history
+
+# Workspace user data (personal content)
+coco_workspace/
+coco_workspace_backup/
+archive/
+demo_workspace/
+test_workspace/
+coco_infinite_workspace/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.Python
+
+# Virtual environments
+venv_cocoa/
+venv_cocoa_backup/
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+._*
+
+# Media outputs (generated content)
+audio_outputs/
+*.mp4
+*.mp3
+*.wav
+
+# OAuth screenshots/images
+*.png
+!docs/*.png
+!docs/**/*.png
+
+# Backup and temp files
+*.backup
+*.bak
+cocoa_mcp.py.backup
+gmail_consciousness.py.backup
+debug_*.eml
+*.eml
+
+# Personal documentation (not for public)
+CLAUDE_FULL.md
+CLAUDE_SUGGESTED.md
+coco_telegram.md
+CONTEXT_CRISIS_FIX_COMPLETE.md
+EMAIL_INDEX_FIX_COMPLETE.md
+IMPLEMENTATION_COMPLETE.md
+MEMORY_RESCUE_COMPLETE.md
+OPTION_AB_IMPLEMENTATION_COMPLETE.md
+TASK_AUTOMATION_FIXES.md
+TWITTER_INTEGRATION.md
+AUTOMATION_QUICK_START.md
+AUTOMATION_TOGGLE_COMMANDS_COMPLETE.md
+CURATED_AUTOMATION_TEMPLATES.md
+
+# Migration/setup scripts with potential hardcoded paths
+migrate_memory_db.py
+migrations/
+init.sql
+
+# Setup scripts (may contain personal paths)
+install_system_wide.sh
+launch_eternal.sh
+setup_audio.sh
+setup_mcp.sh
+setup_visual.sh
+upgrade_ytdlp.sh
+
+# Config files with potential secrets
+coco_automation.yml
+
+# Google OAuth screenshot
+coco google oauth.png
+
+# Claude project config (personal)
+.claude/
+
+# Logs
+*.log
+
+# Old/personal test files
+test_beautiful_emails.py
+test_beautiful_google_docs.py
+test_facts_memory.py
+test_facts_migration.py
+test_universal_fact_extraction.py
+test_html_email_fix.py
+test_news_automation.py
+test_twitter_media_simple.py
+test_twitter_integration.py
+test_video_complete.py
+test_video_observer.py
+test_audio_quick.py
+test_visual_complete.py
+test_coco_google_workspace.py
+test_integration.py
+
+# Old development docs (contain personal paths/emails)
+docs/fixes/
+docs/guides/
+docs/implementations/
+docs/architecture/
+docs/TWITTER_MEDIA_INTEGRATION.md
+docs/TWITTER_RATE_LIMIT_DASHBOARD.md
+
+# Legacy single-file versions
+cocoa.py
+cocoa_mcp.py
+
+# Legacy root-level extension modules (now in coco/integrations/)
+/cocoa_audio.py
+/cocoa_music.py
+/cocoa_visual.py
+/cocoa_video.py
+/cocoa_video_observer.py
+/cocoa_twitter.py
+/cocoa_scheduler.py
+/gmail_consciousness.py
+/google_workspace_consciousness.py
+/google_docs_consciousness.py
+/google_calendar_consciousness.py
+/google_workspace_gmail_bridge.py
+/personal_assistant_kg_enhanced.py
+/simple_rag.py
+
+# Legacy memory directory (now in coco/memory/)
+/memory/
+
+# Other legacy/personal files
+get_token_persistent.py
+migrate_to_token_json.py
+requirements.txt

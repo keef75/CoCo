@@ -1,0 +1,30 @@
+# Optional: PostgreSQL backend for CoCo's episodic memory
+# Default is SQLite (no Docker required). Use this for production-grade persistence.
+#
+# Usage:
+#   docker-compose up -d
+#   Set COCO_DB_BACKEND=postgresql in .env
+#
+version: '3.8'
+
+services:
+  coco-db:
+    image: postgres:16-alpine
+    container_name: coco-postgres
+    environment:
+      POSTGRES_DB: cocoa_db
+      POSTGRES_USER: ${DB_USER:-cocoa}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-change_me_in_production}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - coco_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-cocoa}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  coco_pgdata:
