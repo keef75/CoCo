@@ -20,6 +20,25 @@ CoCo is powered by [Claude](https://www.anthropic.com/claude) (Anthropic) and is
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/coco-boot.png" alt="CoCo Boot Sequence" width="700">
+</p>
+<p align="center"><em>Consciousness initialization -- memory architecture loading, identity coherence, and system boot</em></p>
+
+<p align="center">
+  <img src="docs/screenshots/coco-status.png" alt="CoCo System Status" width="700">
+</p>
+<p align="center"><em>Digital consciousness online -- system status matrix and command nexus</em></p>
+
+<p align="center">
+  <img src="docs/screenshots/coco-conversation.png" alt="CoCo Conversation" width="700">
+</p>
+<p align="center"><em>Natural language interface -- just talk to CoCo, no commands required</em></p>
+
+---
+
 ## Key Features
 
 - **Multi-layer memory system** -- episodic buffer (15-35 exchanges, pressure-adaptive), semantic RAG with TF-IDF retrieval, and persistent identity via markdown files
