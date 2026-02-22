@@ -1,0 +1,148 @@
+# COCO Autonomous Task Orchestrator Configuration
+# Define your recurring automated tasks here
+#
+# Schedule formats supported:
+# - Cron expressions: "0 20 * * 0" (Sunday 8 PM)
+# - Special expressions: "@daily", "@weekly", "@monthly"
+# - Natural language: "every Sunday at 8pm", "daily at 9am"
+
+automation:
+  enabled: true
+  timezone: "America/Chicago"  # Your timezone
+  max_concurrent_tasks: 3
+  retry_failed_tasks: true
+  max_retries: 3
+
+# Email settings for reports and notifications
+email:
+  enabled: true
+  from_name: "COCO Assistant"
+  default_recipients: ["keith@gococoa.ai"]
+
+# Web research settings
+web_research:
+  enabled: true
+  max_results_per_query: 10
+  sources: ["news", "research", "blogs"]
+
+# Task definitions
+tasks:
+  # Weekly schedule email every Sunday night
+  weekly_schedule:
+    name: "Weekly Schedule Email"
+    schedule: "every Sunday at 8pm"
+    template: "calendar_email"
+    enabled: true
+    config:
+      recipients: ["keith@gococoa.ai"]
+      subject: "📅 Your Week Ahead - COCO Schedule Summary"
+      include_next_week: true
+      include_weather: false
+      timezone: "America/Chicago"
+
+  # Daily AI news digest
+  ai_news_digest:
+    name: "Daily AI News Digest"
+    schedule: "daily at 9am"
+    template: "news_digest"
+    enabled: true
+    config:
+      recipients: ["keith@gococoa.ai"]
+      subject: "🤖 Daily AI News Digest"
+      topics: ["artificial intelligence", "machine learning", "Claude", "OpenAI"]
+      max_articles: 10
+      include_summaries: true
+
+  # Wednesday video for wife
+  wednesday_video:
+    name: "Wednesday Love Video"
+    schedule: "every Wednesday at 9am"
+    template: "personal_video"
+    enabled: true
+    config:
+      recipients: ["wife@example.com"]  # Replace with actual email
+      video_prompt: "Create a loving good morning message with encouraging words for the day"
+      video_style: "heartfelt and personal"
+      include_music: true
+      duration_seconds: 30
+
+  # Monthly system health report
+  health_report:
+    name: "Monthly Health Report"
+    schedule: "first Monday of each month at 10am"
+    template: "health_check"
+    enabled: true
+    config:
+      recipients: ["keith@gococoa.ai"]
+      subject: "🔧 COCO System Health Report"
+      include_metrics: true
+      include_logs: true
+      check_all_modules: true
+
+  # Weekly crypto/stock research (example)
+  market_research:
+    name: "Weekly Market Research"
+    schedule: "every Friday at 5pm"
+    template: "web_research"
+    enabled: false  # Disabled by default
+    config:
+      recipients: ["keith@gococoa.ai"]
+      subject: "📈 Weekly Market Research"
+      queries: ["cryptocurrency news", "tech stock analysis", "AI company valuations"]
+      format: "executive_summary"
+
+  # Birthday reminders (example advanced use case)
+  birthday_reminders:
+    name: "Birthday Reminder Check"
+    schedule: "daily at 8am"
+    template: "birthday_check"
+    enabled: false  # Disabled by default
+    config:
+      recipients: ["keith@gococoa.ai"]
+      calendar_source: "personal"
+      advance_notice_days: 7
+      send_gift_suggestions: true
+
+# Advanced scheduling examples (for reference)
+#
+# Cron expressions:
+# "0 9 * * 1-5"     # Weekdays at 9 AM
+# "0 20 * * 0"      # Sunday at 8 PM
+# "0 0 1 * *"       # First day of each month at midnight
+# "0 */6 * * *"     # Every 6 hours
+#
+# Natural language examples:
+# "every Monday at 2pm"
+# "daily at 9:30am"
+# "every 2 hours"
+# "first Friday of each month at 3pm"
+# "last day of each month at 11pm"
+# "every weekday at 8am"
+
+# Template-specific configurations
+template_defaults:
+  calendar_email:
+    look_ahead_days: 7
+    include_details: true
+    format: "html"
+
+  news_digest:
+    max_articles: 15
+    include_images: false
+    sentiment_analysis: true
+
+  personal_video:
+    default_duration: 30
+    quality: "720p"
+    aspect_ratio: "16:9"
+
+  web_research:
+    search_depth: "advanced"
+    max_results: 20
+    include_summaries: true
+
+  health_check:
+    check_disk_space: true
+    check_memory_usage: true
+    check_api_keys: true
+    test_consciousness_modules: true

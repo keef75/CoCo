@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "coco-consciousness"
+version = "1.0.0"
+description = "Consciousness Orchestration and Cognitive Operations - An early agentic AI system demonstrating digital embodiment, multi-layer memory, and tool-as-cognitive-organ patterns."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    {name = "Keith Lambert"},
+]
+keywords = ["ai", "agent", "consciousness", "claude", "anthropic", "agentic"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "anthropic>=0.64.0",
+    "rich>=13.7.0",
+    "prompt-toolkit>=3.0.0",
+    "tiktoken>=0.7.0",
+    "beautifulsoup4>=4.12.0",
+    "pyyaml>=6.0.0",
+    "requests>=2.31.0",
+    "pytz>=2024.1",
+]
+
+[project.optional-dependencies]
+web = ["tavily-python>=0.7.0"]
+audio = ["elevenlabs>=2.11.0", "pygame>=2.1.0", "scipy>=1.9.0"]
+visual = ["pillow>=10.0.0"]
+video = ["fal-client>=0.4.0", "yt-dlp>=2024.10.0"]
+twitter = ["tweepy>=4.14.0"]
+google = [
+    "google-api-python-client>=2.186.0",
+    "google-auth>=2.41.0",
+    "google-auth-httplib2>=0.2.1",
+    "google-auth-oauthlib>=1.2.3",
+]
+scheduler = ["croniter>=2.0.0", "schedule>=1.2.0"]
+all = [
+    "coco-consciousness[web,audio,visual,video,twitter,google,scheduler]",
+]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/keef75/CoCo"
+Repository = "https://github.com/keef75/CoCo"
+Issues = "https://github.com/keef75/CoCo/issues"
+
+[project.scripts]
+coco = "coco.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["coco*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

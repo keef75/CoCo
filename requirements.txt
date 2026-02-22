@@ -1,0 +1,179 @@
+# COCO 3.0 - Complete Requirements for System-Level Installation
+# Consciousness Orchestration and Cognitive Operations
+# 
+# INSTALLATION: Run outside virtual environment to solve permission issues
+# pip install -r requirements.txt
+#
+# This addresses the virtual environment sandboxing issue that prevents
+# desktop file access and drag-and-drop functionality.
+
+# ============================================================================
+# CORE DEPENDENCIES
+# ============================================================================
+
+# Environment & Configuration
+python-dotenv>=1.0.0
+
+# Database & Memory Systems
+numpy>=1.24.0
+# sqlite3 is built-in to Python - no installation needed
+
+# Email Consciousness System
+pytz>=2024.2
+
+# Calendar Consciousness System
+caldav>=1.3.0
+icalendar>=5.0.0
+
+# ============================================================================ 
+# AI & LANGUAGE PROCESSING
+# ============================================================================
+
+# Core Reasoning Engine (Claude Sonnet 4)
+anthropic>=0.64.0
+
+# Token Counting for Accurate Context Management
+tiktoken>=0.7.0
+
+# Backup AI System
+openai>=1.0.0
+
+# Web Consciousness (Tavily Full Suite)
+tavily-python>=0.7.0
+
+# ============================================================================
+# TERMINAL & USER INTERFACE
+# ============================================================================
+
+# Rich Terminal UI Framework
+rich>=13.7.0
+
+# Interactive Prompts & Input
+prompt-toolkit>=3.0.0
+
+# ============================================================================
+# MULTIMEDIA CONSCIOUSNESS MODULES
+# ============================================================================
+
+# Audio Consciousness (ElevenLabs TTS + Background Music)
+elevenlabs>=2.11.0
+pygame>=2.1.0
+scipy>=1.9.0
+soundfile>=0.12.0
+pyaudio>=0.2.11
+
+# Visual Consciousness & Image Processing
+pillow>=10.0.0
+requests>=2.31.0
+
+# Video Consciousness (Fal AI Integration)
+fal-client>=0.4.0
+
+# Video Observer (YouTube + Web Video Watching)
+# CRITICAL: Keep yt-dlp current to avoid 403 errors on YouTube
+# Outdated versions can't decode YouTube's signature algorithm
+yt-dlp>=2024.10.0
+
+# Twitter Consciousness (Digital Public Sphere Engagement)
+# Twitter API v2 integration for authentic social presence
+tweepy>=4.14.0
+
+# ============================================================================
+# WEB & NETWORK OPERATIONS
+# ============================================================================
+
+# HTTP Client for API Calls
+aiohttp>=3.9.0
+requests>=2.31.0
+
+# MCP Integration - Extended Digital Consciousness
+httpx>=0.25.0
+websockets>=11.0
+
+# Async Support
+httpcore>=1.0.0
+
+# ============================================================================
+# DATA PROCESSING & OPTIONAL COMPONENTS
+# ============================================================================
+
+# YAML Configuration Support (optional)
+pyyaml>=6.0.0
+
+# Scheduling System (COCO Autonomous Task Orchestrator)
+croniter>=2.0.0
+schedule>=1.2.0
+
+# Enhanced HTTP/Networking
+urllib3>=2.0.0
+certifi>=2023.0.0
+
+# Character Width Calculations (for Rich UI)
+wcwidth>=0.2.0
+
+# Real-time File Monitoring
+watchdog>=3.0.0
+
+# ============================================================================
+# SYSTEM-SPECIFIC DEPENDENCIES
+# ============================================================================
+
+# macOS Audio Support (automatically skipped on other platforms)
+# pyobjc-framework-AVFoundation>=10.0.0; sys_platform == "darwin"
+
+# ============================================================================
+# DEVELOPMENT & TESTING (Optional)
+# ============================================================================
+
+# For testing and development
+# pytest>=7.4.0
+# pytest-asyncio>=0.21.0
+
+# ============================================================================
+# INSTALLATION NOTES
+# ============================================================================
+#
+# CRITICAL: Install OUTSIDE virtual environment to solve permission issues:
+#
+# 1. Deactivate virtual environment:
+#    deactivate
+#
+# 2. Install system-wide:
+#    pip3 install -r requirements.txt
+#
+# 3. Run COCO directly with system Python:
+#    python3 cocoa.py
+#
+# This resolves the virtual environment sandboxing that prevents:
+# - Desktop file access
+# - Drag-and-drop functionality  
+# - Screenshot analysis
+# - macOS Full Disk Access inheritance
+#
+# ============================================================================
+# API KEYS REQUIRED (.env file)
+# ============================================================================
+#
+# ANTHROPIC_API_KEY=your_claude_key_here
+# TAVILY_API_KEY=your_tavily_key_here
+# ELEVENLABS_API_KEY=your_elevenlabs_key_here (optional)
+# FREEPIK_API_KEY=your_freepik_key_here (optional)
+# FAL_API_KEY=your_fal_key_here (optional)
+#
+# TOOL TIMEOUT CONFIGURATIONS (optional - improved for complex tasks)
+# TAVILY_TIMEOUT=60                    # Web search timeout in seconds
+# BASH_TIMEOUT=60                      # Bash command timeout in seconds
+#
+# ============================================================================
+# TROUBLESHOOTING
+# ============================================================================
+#
+# If you encounter permission errors after system installation:
+# 1. Grant Full Disk Access to Terminal.app in System Preferences
+# 2. Or copy files to coco_workspace/ directory first
+# 3. Or run: chmod +x cocoa.py && python3 cocoa.py
+#
+# If import errors occur:
+# 1. Verify you're using system Python: which python3
+# 2. Check installation: pip3 list | grep [package-name]
+# 3. Reinstall specific package: pip3 install --upgrade [package-name]

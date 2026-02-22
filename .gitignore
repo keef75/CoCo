@@ -1,0 +1,60 @@
+# Video files
+coco_workspace_backup/videos/*.mp4
+cocoa_video_*.mp4
+*.mp4
+
+# Audio files
+audio_outputs/*.mp3
+*.mp3
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+venv_cocoa/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Workspace
+coco_workspace/
+coco_workspace_backup/
+
+# Database files
+*.db
+*.db-journal
+
+# Logs
+*.log
+
+# Credentials & secrets
+token.json
+.env
+.env-e
+.env-*
+!.env.example
+!.env-context-management-example
+credentials.json
+client_secret*.json
+new_tokens.txt
+*.pem
+*.key
+
+# OAuth scripts with hardcoded secrets
+scripts/oauth/get_google_tokens.py
+scripts/oauth/setup_google_oauth_from_json.py
